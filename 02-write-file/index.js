@@ -2,10 +2,12 @@ const fs = require('fs');
 const path = require('node:path'); 
 const readline = require('readline');
 
+const curFolder = '02-write-file';
+
 const rl = readline.createInterface({
   input: process.stdin,
 });
-const ws = fs.createWriteStream(path.join('write.txt'));
+const ws = fs.createWriteStream(path.join(`${curFolder}/write.txt`));
 
 console.log('Привет, пиши:')
 rl.on('line', (input) => {
