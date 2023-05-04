@@ -1,6 +1,5 @@
 const fsPromises = require('fs/promises');
 const path = require('node:path'); 
-const readline = require('readline');
 
 async function filesInFolder(folderName){
   try {
