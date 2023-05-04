@@ -5,7 +5,7 @@ const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
 });
-const ws = fs.createWriteStream('write.txt');
+const ws = fs.createWriteStream(path.join('write.txt'));
 
 console.log('Привет, пиши:')
 rl.on('line', (input) => {
