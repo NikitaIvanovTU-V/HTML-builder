@@ -2,6 +2,7 @@ const fsPromises = require('fs/promises');
 const fs = require('fs');
 const path = require('node:path');
 const merge = require('../05-merge-styles/index');
+const { copyDir } = require('../04-copy-directory/copyDir');
 const curFolder = '06-build-page';
 
 async function buildPage() {
@@ -25,6 +26,7 @@ async function buildPage() {
     const result = fs.createWriteStream(`${curFolder}/project-dist/index.html`);
     result.write(templateData);
     merge.mergeStyles(curFolder,'/project-dist/style.css');
+    copyDir(curFolder,'assets','project-dist/assets')
   } catch (err) {
     console.error(err.message);
   }
